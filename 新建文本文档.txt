@@ -1,0 +1,8 @@
+生成pdf,3种方式
+上传图片，excel
+生成excel,md5Util,pageUtil,jwtUtil，
+生成验证码，手机发送短信验证码，生成token
+生成二维码，以图片流，base64, 保存到本地文件三种形式
+下载文件
+登录拦截器基于token认证
+发送邮件

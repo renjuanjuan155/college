@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MYSQLTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost/erp?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.springboot.college.model"
+                            targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.springboot.college.mapper"
+                         targetProject="./src/main/resources/mapping.com.springboot.college.mapper">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="MIXEDMAPPER"
+                             targetPackage="com.springboot.college.mapper"
+                             targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="sys_log" domainObjectName="SysLog" enableCountByExample="false"
+        enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false"/>
+
+ <!--<table tableName="imgs_info" domainObjectName="ImgsInfo" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_account" domainObjectName="JshAccount" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_accounthead" domainObjectName="JshAccountHead" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_accountitem" domainObjectName="JshAccountItem" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_depot" domainObjectName="JshDepot" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_depothead" domainObjectName="JshDepotHead" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_depotitem" domainObjectName="JshdepotItem" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_functions" domainObjectName="JshFunctions" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_inoutitem" domainObjectName="JshInoutItem" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_log" domainObjectName="JshLog" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_material" domainObjectName="JshMaterial" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_material_extend" domainObjectName="JshMaterialExtend" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_material_stock" domainObjectName="JshMaterialStock" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_materialcategory" domainObjectName="JshMaterialCategory" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_materialproperty" domainObjectName="JshMaterialProperty" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_msg" domainObjectName="JshMsg" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_orga_user_rel" domainObjectName="JshOrgaUserRel" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_organization" domainObjectName="JshOrganization" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_person" domainObjectName="JshPerson" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_role" domainObjectName="JshRole" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_sequence" domainObjectName="JshSequence" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_serial_number" domainObjectName="JshSerialNumber" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_supplier" domainObjectName="JshSupplier" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_systemconfig" domainObjectName="JshSystemConfig" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_tenant" domainObjectName="JshTenant" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_unit" domainObjectName="JshUnit" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_user" domainObjectName="JshUser" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+        <!--<table tableName="jsh_userbusiness" domainObjectName="JshUserBusiness" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"/>-->
+
+
+
+    </context>
+</generatorConfiguration>

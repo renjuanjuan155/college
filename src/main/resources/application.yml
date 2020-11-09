@@ -1,0 +1,115 @@
+app:
+  version: 1.0.0
+  name: college #项目名称，启动的时候要加上去
+server:
+  port: 8080
+  servlet:
+    context-path: /${app.name}
+database:
+  def-database-id: mysql
+  mysql:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/erp?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/erp?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      initial-size: 10
+      min-idle: 10
+      max-active: 100
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      filters: stat
+      max-open-prepared-statements: 20
+      pool-prepared-statements: true
+      validation-query: SELECT 1
+  clickhouse:
+    driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+    url: jdbc:clickhouse://127.0.0.1:8123/default
+    initialSize: 10
+    maxActive: 100
+    minIdle: 10
+    maxWait: 6000
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 1000
+      password:
+      jedis:
+        pool:
+          max-active: 1000
+          max-idle: 100
+          min-idle: 8
+          max-wait: -1
+  servlet:
+      multipart:
+        enabled: true
+        file-size-threshold: 0
+        max-file-size: 10MB
+        max-request-size: 100MB
+        resolve-lazily: false
+        location: D:\picture\upload #自定义图片上传后存放的地方
+      file:
+        download:
+            url: D:/personal/downLoad
+  mail:
+      host: smtp.qq.com
+      default-encoding: utf-8
+      username: 1272203054@qq.com
+      #移动端客户授权码(在邮箱中设置)
+      password: msguhofcjjtoieje
+
+#clickhouse:
+#  address: jdbc:clickhouse://172.20.xxx.xxx:8123
+#  username: root
+#  password: 123456
+#  db: marketing
+#  socketTimeout: 600000
+
+
+mybatis:
+  mapper-locations: classpath:mapping/**/*Mapper.xml
+  type-aliases-package: com.springboot.college.model
+  configuration:
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.huhst: debug
+
+#支付宝支付配置
+alipayconfig:
+  #商户APPID
+  appId: 122334444
+  #私钥 pkcs8格式的
+  rsaPrivateKey: qwertyuiop
+  #请求网关地址
+  url: https://openapi.alipay.com/gateway.do
+  #编码
+  charset: UTF-8
+  #返回格式
+  format: JSON
+  #支付宝公钥
+  alipayPublicKey: asdfghjkl
+  #签名方式
+  signType: RSA2
+#文件上传路径
+file:
+  #虚拟路径，对外展示
+  staticAccessPath: /file/**
+  #本地测试真实路径，可以改为服务器tomcat中路径
+  fileupload:  D:/fileupload/
+
+apiTest:
+  urlTest:
+    getConstellationUrl: http://web.juhe.cn:8080/constellation/getAll
+
